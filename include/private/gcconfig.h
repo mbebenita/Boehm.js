@@ -70,6 +70,12 @@
 #    define I386
 #    define mach_type_known
 # endif
+# if defined(__EMSCRIPTEN__)
+#    define I386
+#    define mach_type_known
+#    define DATASTART 8
+#    define STACK_GROWS_UP
+# endif
 # if defined(__arm) || defined(__arm__) || defined(__thumb__)
 #    define ARM32
 #    if !defined(LINUX) && !defined(NETBSD) && !defined(FREEBSD) \
@@ -1213,7 +1219,6 @@
 #        define MAX_NACL_GC_THREADS 1024
 #      endif
 #   endif /* NACL */
-
 #   ifdef LINUX
 #       define OS_TYPE "LINUX"
 #       define LINUX_STACKBOTTOM
