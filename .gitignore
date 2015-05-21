@@ -1,0 +1,59 @@
+# Boehm.js-specific files:
+.deps/
+Makefile
+a.out.js
+bdw-gc.pc
+config.status
+cord/.deps/
+cord/.dirstamp
+demo.js
+include/private/config.h
+include/private/stamp-h1
+libatomic_ops/Makefile
+libatomic_ops/a.out.js
+libatomic_ops/config.status
+libatomic_ops/doc/Makefile
+libatomic_ops/pkgconfig/atomic_ops-uninstalled.pc
+libatomic_ops/pkgconfig/atomic_ops.pc
+libatomic_ops/src/.deps/
+libatomic_ops/src/Makefile
+libatomic_ops/src/atomic_ops/Makefile
+libatomic_ops/src/atomic_ops/sysdeps/Makefile
+libatomic_ops/src/config.h
+libatomic_ops/src/stamp-h1
+libatomic_ops/tests/.deps/
+libatomic_ops/tests/Makefile
+libtool
+tests/.deps/
+
+# Generic rules for C++ projects:
+# https://github.com/github/gitignore/blob/master/C%2B%2B.gitignore
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
