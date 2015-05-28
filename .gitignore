@@ -2,8 +2,10 @@
 .deps/
 Makefile
 a.out.js
+a.out.js.mem
 bdw-gc.pc
 config.status
+config.log
 cord/.deps/
 cord/.dirstamp
 demo.js
@@ -12,6 +14,7 @@ include/private/stamp-h1
 libatomic_ops/Makefile
 libatomic_ops/a.out.js
 libatomic_ops/config.status
+libatomic_ops/config.log
 libatomic_ops/doc/Makefile
 libatomic_ops/pkgconfig/atomic_ops-uninstalled.pc
 libatomic_ops/pkgconfig/atomic_ops.pc
@@ -25,6 +28,7 @@ libatomic_ops/tests/.deps/
 libatomic_ops/tests/Makefile
 libtool
 tests/.deps/
+.libs/
 
 # Generic rules for C++ projects:
 # https://github.com/github/gitignore/blob/master/C%2B%2B.gitignore
