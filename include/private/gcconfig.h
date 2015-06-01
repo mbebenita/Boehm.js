@@ -73,7 +73,9 @@
 # if defined(__EMSCRIPTEN__)
 #    define I386
 #    define mach_type_known
-#    define DATASTART 8
+#    define HEAP_START 8
+#    define DATASTART 0
+#    define DATAEND DATASTART
 #    define STACK_GROWS_UP
 # endif
 # if defined(__arm) || defined(__arm__) || defined(__thumb__)
