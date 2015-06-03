@@ -82,7 +82,12 @@ asm static void PushMacRegisters()
 # define HAVE_PUSH_REGS
 #else  /* No asm implementation */
 
-# if defined(M68K) && defined(AMIGA)
+# if defined(__EMSCRIPTEN__)
+ void GC_push_regs(void) {
+ }
+#   define HAVE_PUSH_REGS
+
+# elif defined(M68K) && defined(AMIGA)
     /* This function is not static because it could also be             */
     /* erroneously defined in .S file, so this error would be caught    */
     /* by the linker.                                                   */
