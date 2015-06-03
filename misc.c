@@ -303,6 +303,10 @@ GC_INNER void GC_extend_size_map(size_t i)
 /* another frame.                                                       */
 GC_API void * GC_CALL GC_clear_stack(void *arg)
 {
+#   if defined(__EMSCRIPTEN__)
+    return arg;
+#   else
+
     ptr_t sp = GC_approx_sp();  /* Hotter than actual sp */
 #   ifdef THREADS
         word volatile dummy[SMALL_CLEAR_SIZE];
@@ -371,6 +375,7 @@ GC_API void * GC_CALL GC_clear_stack(void *arg)
     }
     return(arg);
 # endif
+#   endif
 }
 
 
