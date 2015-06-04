@@ -1,0 +1,13 @@
+language: cpp
+before_script:
+  - wget -P /tmp/j2me.js -N https://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/37.0b7-candidates/build1/jsshell-linux-x86_64.zip
+  - unzip -d /tmp/js /tmp/j2me.js/jsshell-linux-x86_64.zip
+  - export PATH=$PATH:/tmp/js
+  - git clone --recursive https://github.com/marco-c/emscripten-sdk.git && cd emscripten-sdk && ./emsdk activate latest && source ./emsdk_env.sh && cd ..
+script:
+  - emconfigure ./configure --without-threads --disable-threads __EMSCRIPTEN__=1
+  - emmake make
+sudo: false
+cache:
+  directories:
+    - /tmp/j2me.js
