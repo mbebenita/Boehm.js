@@ -1,3 +1,5 @@
+# Boehm.js [![Build Status](https://travis-ci.org/marco-c/Boehm.js.svg)](https://travis-ci.org/marco-c/Boehm.js)
+
 ## Compile
 
 ```
