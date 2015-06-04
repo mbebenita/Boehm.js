@@ -10,7 +10,7 @@ int main() {
 
     int *p = (int*)GC_MALLOC_UNCOLLECTABLE(sizeof(int) * size);
 
-    printf("Step %d - Allocated: %d - At: %x\n", i, size, p);
+    //printf("Step %d - Allocated: %d - At: %x\n", i, size, p);
 
     for (int j = 0; j < size; j++) {
       assert(p[j] == 0);
