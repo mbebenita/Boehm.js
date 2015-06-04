@@ -5,9 +5,21 @@ before_script:
   - unzip -d /tmp/js /tmp/j2me.js/jsshell-linux-x86_64.zip
   - export PATH=$PATH:/tmp/js
   - git clone --recursive https://github.com/marco-c/emscripten-sdk.git && cd emscripten-sdk && ./emsdk activate latest && source ./emsdk_env.sh && cd ..
-script:
   - emconfigure ./configure --without-threads --disable-threads __EMSCRIPTEN__=1
   - emmake make
+  - emcc -Iinclude/ .libs/libgc.so demo-scattered.cpp -o demo-scattered.js
+  - emcc -Iinclude/ .libs/libgc.so tests/finalizer.cpp -o tests/finalizer.js
+  - emcc -Iinclude/ .libs/libgc.so tests/huge_test.c -o tests/huge_test.js
+  - emcc -Iinclude/ .libs/libgc.so tests/middle.c -o tests/middle.js
+  - emcc -Iinclude/ .libs/libgc.so tests/realloc_test.c -o tests/realloc_test.js
+  - emcc -Iinclude/ .libs/libgc.so tests/smash_test.c -o tests/smash_test.js
+script:
+  - js demo-scattered.js
+  - js tests/finalizer.js
+  - js tests/huge_test.js
+  - js tests/middle.js
+  - js tests/realloc_test.js
+  - js tests/smash_test.js
 sudo: false
 cache:
   directories:
