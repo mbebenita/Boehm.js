@@ -76,6 +76,7 @@
 #    define HEAP_START 8
 #    define DATASTART 0
 #    define DATAEND DATASTART
+#    define CLEAR_DOUBLE(x) (((double*)(x))[0] = 0)
 # endif
 # if defined(__arm) || defined(__arm__) || defined(__thumb__)
 #    define ARM32
